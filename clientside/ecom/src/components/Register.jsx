@@ -44,7 +44,6 @@ const Register = () => {
         </div>
         <form onSubmit={handleSubmit} method="post">
           <div className="forms-group">
-            {/* <label>Username</label> */}
             <input
               type="text"
               name="username"
@@ -55,7 +54,6 @@ const Register = () => {
             />
           </div>
           <div className="forms-group">
-            {/* <label>Password</label> */}
             <input
               type="email"
               name="email"
@@ -66,7 +64,6 @@ const Register = () => {
             />
           </div>
           <div className="forms-group">
-            {/* <label>Password</label> */}
             <input
               type="Phone"
               name="Phone"
@@ -77,7 +74,6 @@ const Register = () => {
             />
           </div>
           <div className="forms-group">
-            {/* <label>Password</label> */}
             <input
               type="password"
               name="pwd"
@@ -88,7 +84,6 @@ const Register = () => {
             />
           </div>
           <div className="forms-group">
-            {/* <label>Confirm Password</label> */}
             <input
               type="password"
               name="cpwd"
