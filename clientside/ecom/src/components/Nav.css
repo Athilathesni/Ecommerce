@@ -1,0 +1,129 @@
+/* General Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Search Form */
+  .search-form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .search-btn {
+    background-color: #007bff;
+    border: none;
+    padding: 6px 10px;
+    margin-left: 8px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .search-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Login Button */
+  .login-btn {
+    background-color: #28a745;
+    border: none;
+    padding: 8px 15px;
+    margin-left: 15px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .login-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Profile Dropdown */
+  .profile-dropdown {
+    position: relative;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  
+  .profile-icon {
+    color: #555;
+  }
+  
+  .profile-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    min-width: 150px;
+  }
+  
+  .profile-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .profile-dropdown .dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .profile-dropdown .dropdown-menu a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-menu {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .search-form {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .login-btn {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .profile-dropdown {
+      margin-left: 0;
+    }
+  }
+  
