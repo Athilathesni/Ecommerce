@@ -38,7 +38,7 @@ const Login = () => {
     <div className="login-container">
     <div className="login-box">
       <div className="login-left">
-        <h2>𝗟𝗢𝗚𝗜𝗡</h2>
+        <h2 className="h2">𝗟𝗢𝗚𝗜𝗡</h2>
         <p>Get access to your Orders, Wishlist, and Recommendations</p>
       </div>
       <div className="login-right">
@@ -65,7 +65,7 @@ const Login = () => {
                 required
               />
              </div>
-             <button type="submit" className="btn-login"> Login </button>
+             <button type="submit" className="btn-login" onClick={handleSubmit}> Login </button>
         </form>
         <div className="form-footer">
            <Link to={"/#"} className="forgot-password-link">
