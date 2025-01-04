@@ -1,4 +1,4 @@
-/* General Navbar Styling */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -20,7 +20,7 @@
     align-items: center;
   }
   
-  /* Search Form */
+ 
   .search-form {
     display: flex;
     align-items: center;
@@ -47,28 +47,8 @@
     border-radius: 4px;
     color: white;
     cursor: pointer;
-    margin-right: 20px;
+
   }
-  
-  .search-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Login Button */
-  .login-btn {
-    background-color: #28a745;
-    border: none;
-    padding: 8px 15px;
-    margin-left: 15px;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .login-btn:hover {
-    background-color: #218838;
-  }
-  
   /* Profile Dropdown */
   .profile-dropdown {
     position: relative;
