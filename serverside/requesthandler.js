@@ -1,5 +1,5 @@
 import userSchema from "./model/user.js"
-import addressSchema from "./model/addres.js"
+import addressSchema from "./model/address.js"
 import sellerSchema from "./model/seller.js"
 import productSchema from "./model/product.js"
 import { validationResult } from "express-validator";
