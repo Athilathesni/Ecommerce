@@ -1,5 +1,5 @@
 /* Basic Reset */
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -79,10 +79,10 @@
   button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
-  }
+  } */
   
   /* Error and Success Messages */
-  .error-message,
+  /* .error-message,
   .success-message {
     font-size: 14px;
     text-align: center;
@@ -106,10 +106,10 @@
   
   select {
     background-color: #fff;
-  }
+  } */
   
   /* Adjustments for smaller screen */
-  @media screen and (max-width: 500px) {
+  /* @media screen and (max-width: 500px) {
     .register-page {
       width: 100%;
       padding: 15px;
@@ -130,5 +130,5 @@
     button {
       font-size: 14px;
     }
-  }
+  } */
   

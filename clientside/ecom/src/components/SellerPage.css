@@ -1,4 +1,4 @@
-.page-container {
+/* .page-container {
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -70,9 +70,9 @@
           background-color: #dc3545;
           color: white;
           
-          &:hover {
+          hover {
             background-color: #c82333;
-          }
+          
         }
       }
     }
@@ -140,4 +140,7 @@
   button:hover {
     background-color: #e6e6e6;
   }
-  
+   */
+
+
+   
