@@ -51,7 +51,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "../css/Home.scss";
+
 
 const Home = ({name}) => {
   const token = localStorage.getItem("token");

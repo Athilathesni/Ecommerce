@@ -245,10 +245,10 @@
 
 
 import React, { useState, useEffect } from "react";
-import "../css/ProfileInfo.scss";
+
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Flex } from "@chakra-ui/react";
+
 
 const ProfileInfo = () => {
   const navigate = useNavigate();

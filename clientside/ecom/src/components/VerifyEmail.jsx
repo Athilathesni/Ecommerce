@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react"
-import "../css/VerifyEmail.scss"
+
 import axios from 'axios'
 
 const VerifyEmail = () => {

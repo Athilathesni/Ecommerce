@@ -3,28 +3,35 @@ import Home from "./components/Home"
 import Login from "./components/Login"
 import Nav from './components/Nav'
 import Register from "./components/Register"
+import VerifyEmail from "./components/VerifyEmail"
 import Profile from "./components/Profile"
-import Seller from "./components/Seller"
-import Addp from "./components/Addp"
-import Category from "./components/Category"
-import Productde from "./components/Productde"
+import SellerPage from "./components/SellerPage"
+import AddProduct from "./components/AddProduct"
+import CategoryPage from "./components/CategoryPage"
+import ProductDetailsPage from "./components/ProductDetailsPage"
+import ResetPassword from "./components/ResetPassword"
+import { useState } from "react"
+import ProductDetails from "./components/ProductDetails"
 
 
 function App() {
-
+  const [name,setName]=useState("")
   return (
     <>
       <BrowserRouter>
-      <Nav/>
+      <Nav setName={setName}/>
       <Routes>
-        <Route path="/" element={<Home/>}></Route>
+      <Route path="/" element={<Home name={name}/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/register" element={<Register/>}></Route>
+        <Route path="/verifyEmail" element={<VerifyEmail/>}></Route>
         <Route path="/profile" element={<Profile/>}></Route>
-        <Route path="/sellerPage" element={<Seller/>}></Route>
-        <Route path="/addProduct" element={<Addp/>}></Route>
-        <Route path="/category/:category" element={<Category/>}></Route>
-        <Route path="/product/:productId" element={<Productde/>}></Route>
+        <Route path="/sellerPage" element={<SellerPage/>}></Route>
+        <Route path="/addProduct" element={<AddProduct/>}></Route>
+        <Route path="/category/:category" element={<CategoryPage/>}></Route>
+        <Route path="/products/:productId" element={<ProductDetailsPage/>}></Route>
+        <Route path="/product/:productId" element={<ProductDetails/>}></Route>
+        <Route path="/resetPassword" element={<ResetPassword/>}></Route>
       </Routes>
       </BrowserRouter>
     </>

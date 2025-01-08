@@ -52,7 +52,7 @@ import { useNavigate } from "react-router-dom";
 import ProfileInfo from "./ProfileInfo";
 import Cart from "./Cart";
 import WishList from "./WishList";
-import "../css/Profile.scss";
+
 
 const Profile = () => {
   const navigate = useNavigate();

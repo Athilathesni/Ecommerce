@@ -100,9 +100,10 @@
 
 
 import React, { useState } from "react";
-import "../css/Login.scss";
+import loginimg from "../assets/login.png"
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./Login.css"
 
 const Login = () => {
   const navigate = useNavigate();
@@ -146,51 +147,55 @@ const Login = () => {
   };
 
   return (
-    <div className="login-page">
-      <div className="login-container">
-        <div className="login-header">
-          <h1>Welcome Back!</h1>
-          <p>Please log in to your account</p>
-        </div>
+   <div className="login-container">
+       <div className="login-box">
+      <div className="login-left">
+        <h2 className="h2">𝗟𝗢𝗚𝗜𝗡</h2>
+        <p>Get access to your Orders, Wishlist, and Recommendations</p>
+        <img src={loginimg} alt=""  className="img1"/>
+      </div>
 
         {error && <p className="error-message">{error}</p>} {/* Display error */}
 
+        <div className="login-right">
+
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Email Address</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Enter your email"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>Password</label>
-            <input
-              type="password"
-              name="pass"
-              value={formData.pass}
-              onChange={handleChange}
-              placeholder="Enter your password"
-              required
-            />
-          </div>
-          <button type="submit" className="btn-login">
-            Login
-          </button>
+        <div className="form-group">
+              <input
+                className="in1"
+                type="tel"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div className="form-group">
+              <input
+                className="in1"
+                type="password1"
+                name="pass"
+                value={formData.pass}
+                onChange={handleChange}
+                placeholder="Enter your password"
+                required
+              />
+             </div>
+             <button type="submit" className="btn-login1" onClick={handleSubmit}> Login </button>
         </form>
 
         <div className="form-footer">
-          <Link to={"/verifyEmail"} className="forgot-password-link">
-            Forgot Password?
-          </Link>
-          <span className="separator">|</span>
-          <Link to={"/register"} className="signup-link">
-            Sign Up
-          </Link>
+           <Link to={"/verifyEmail"} className="forgot-password-link">
+             Forgot Password?
+           </Link>
+         </div>
+         <div className="und">
+           <Link to={"/register"} className="signup-link">
+             <span className="sp">Don't have an account?</span>
+             Sign Up
+           </Link>
+         </div>
         </div>
       </div>
     </div>

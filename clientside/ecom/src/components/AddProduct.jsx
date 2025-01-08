@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../css/AddProduct.scss"; // Import SCSS file for styling
+ // Import SCSS file for styling
 import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {

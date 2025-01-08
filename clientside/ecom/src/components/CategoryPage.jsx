@@ -56,7 +56,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../css/CategoryPage.scss"; // Import the SCSS file
+ // Import the SCSS file
 
 const CategoryPage = () => {
   const { category } = useParams();

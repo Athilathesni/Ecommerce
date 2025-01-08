@@ -87,7 +87,7 @@
 
 
 import React from "react";
-import "../css/Nav.scss";
+import "./Nav.css"
 import { Link, useNavigate } from "react-router-dom";
 
 const Nav = ({setName}) => {
@@ -102,16 +102,25 @@ const Nav = ({setName}) => {
 
   return (
     <nav className="navbar">
-      <div className="logo">Bajikart</div>
-      <div className="search-bar">
-        <input type="text" placeholder="Search for products, brands and more" onChange={(e) => setName(e.target.value)} />
-        <button type="submit">Search</button>
+      <div className="navbar-brand">
+        <a href="/" className="logo">𝐄-𝐂𝐎𝐌𝐌𝐄𝐑𝐂𝐄</a>
+        <p className="b1">ᴮᵉᵃᵘᵗʸ ᵃⁿᵈ ᴳʳᵒᵒᵐⁱⁿᵍ</p>
+      </div>
+
+      <div className="nav-center">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="search for cosmetics and more..."
+          onChange={(e) => setName(e.target.value)}
+        />
       </div>
       <div className="nav-links">
         {token ? (
           <>
             <div className="dropdown">
-              <button className="dropdown-btn">Account</button>
+            <button className="profile-icon"></button>
+              {/* <button className="dropdown-btn">Account</button> */}
               <div className="dropdown-content">
                 <Link to="/profile">Profile</Link>
                 <button onClick={handleLogout}>Logout</button>
@@ -119,7 +128,10 @@ const Nav = ({setName}) => {
             </div>
           </>
         ) : (
-          <Link to="/login">Login</Link>
+          <Link to="/login">
+            <button className="log">
+            Login</button>
+            </Link>
         )}
       </div>
     </nav>
