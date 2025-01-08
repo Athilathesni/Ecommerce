@@ -1,114 +1,64 @@
-/* .profile-page {
-    display: flex;
-    height: 100vh;
-    background-color: #f5f5f5;
-  }
-  
-  .profile-sidebar {
-    width: 250px;
-    background-color: #ffffff;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .profile-sidebar h2 {
-    font-size: 22px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .profile-sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .profile-sidebar ul li {
-    font-size: 18px;
-    margin-bottom: 15px;
-    cursor: pointer;
-    transition: 0.3s;
-    color: #555;
-  }
-  
-  .profile-sidebar ul li:hover {
-    color: #0077f7;
-  }
-  
-  .profile-sidebar ul li.active {
-    font-weight: bold;
-    color: #0077f7;
-  }
-  
-  .profile-content {
-    flex-grow: 1;
-    padding: 30px;
-    background-color: #ffffff;
-    overflow-y: auto;
-  }
-  
-  .profile-content h2 {
-    font-size: 24px;
-    color: #333;
-  }
-  
-  .profile-content .section {
-    display: none;
-  }
-  
-  .profile-content .section.active {
-    display: block;
-  }
-  
-  .profile-content .profile-info,
-  .profile-content .cart,
-  .profile-content .wishlist {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .profile-content .profile-info h3 {
-    margin-bottom: 20px;
-  }
-  
-  .profile-content .cart ul,
-  .profile-content .wishlist ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .profile-content .cart ul li,
-  .profile-content .wishlist ul li {
-    margin-bottom: 10px;
-  }
-  
-  .logout-button {
-    padding: 10px 15px;
-    background-color: #f55a4e;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
-    width: 100%;
-    text-align: center;
-    transition: background-color 0.3s;
-  }
-  
-  .logout-button:hover {
-    background-color: #e04e3d;
-  }
-  
-  .profile-info,
-  .cart,
-  .wishlist {
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-  }
-   */
+.profile-page{
+  width: 100%;
+  height: 100%;
+}
+.profile-sidebar{
+  width: 300px;
+  height: 500px;
+  margin-left: 20px;
+  background-color: rgb(223, 218, 218);
+}
+.pro1{
+  width: 90px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: seagreen;
+  color: white;
+  font-weight: bold;
+text-align: center;
+margin-left: 10px;
+margin-right: 3px;
+}
+.car1{
+  width: 90px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: seagreen;
+  color: white;
+  font-weight: bold;
+text-align: center;
+margin-right: 3px;
+}
+.wi1{
+  width: 90px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: seagreen;
+  color: white;
+  font-weight: bold;
+text-align: center;
+}
+.acc{
+  color: blue;
+  margin-left: 70px;
+  margin-bottom: 20px;
+}
+.lou{
+  width: 90px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: seagreen;
+  color: white;
+  font-weight: bold;
+text-align: center;
+margin-top: 360px;
+margin-left: 70px;
+}
