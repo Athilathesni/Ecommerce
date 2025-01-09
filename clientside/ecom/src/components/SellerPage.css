@@ -1,146 +1,89 @@
-/* .page-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f8f8;
-  }
-  
-  .left-section, .right-section {
-    width: 48%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .company-form {
-    display: flex;
-    flex-direction: column;
-  
-    .form-field {
-      margin-bottom: 15px;
-      
-      label {
-        font-size: 1rem;
-        color: #555;
-        margin-bottom: 5px;
-        display: block;
-      }
-  
-      input {
-        padding: 10px;
-        font-size: 1rem;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        width: 100%;
-        box-sizing: border-box;
-      }
-    }
-  
-    .form-actions {
-      display: flex;
-      justify-content: space-between;
-  
-      button {
-        padding: 10px 20px;
-        font-size: 1rem;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-  
-        &:first-child {
-          background-color: #28a745;
-          color: white;
-          
-          &:hover {
-            background-color: #218838;
-          }
-        }
-  
-        &:last-child {
-          background-color: #dc3545;
-          color: white;
-          
-          hover {
-            background-color: #c82333;
-          
-        }
-      }
-    }
-  }
-  
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .product-box {
-    background-color: #f1f1f1;
-    padding: 20px;
-    text-align: center;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  
-    &:hover {
-      background-color: #e0e0e0;
-      transform: translateY(-5px);
-    }
-  }
-  
-  .add-product-button {
-    background-color: #007bff;
-    color: white;
-    font-size: 2rem;
-    width: 60px;
-    height: 60px;
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    transition: background-color 0.3s ease;
-  
-    &:hover {
-      background-color: #0056b3;
-    }
-  
-    &:focus {
-      outline: none;
-    }
-  
-    &::before {
-      content: '+';
-      font-size: 2rem;
-    }
-  }
-  
-  button {
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #e6e6e6;
-  }
-   */
+.page-container{
+  width: 100%;
+  height: 100%;
+}
+.left-section{
+  background-color: rgb(241, 235, 235);
+  width: 400px;
+  height: 620px;
+  margin-left: 50px;
+  box-shadow: 0 0 2px 2px rgb(197, 196, 196);
+}
+.form-field{
+  width: 200px;
+  margin-left: 10px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.lbl{
+  width: 300px;
+  margin-top: -1px;
+  margin-bottom: 8px;
+  margin-left: 15px;
+}
+.addb{
+  width: 60px;
+  border: none;
+  height: 30px;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 100px;
+  border-radius: 3px;
+}
+.canb{
+  width: 60px;
+  border: none;
+  height: 30px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(19, 15, 15);
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 3px;
+}
+.h2c{
+  color: blue;
+  text-align: center;
+  margin-top: 10px;
+}
 
 
-   
+.right-section{
+  background-color: rgb(236, 223, 223);
+  margin-left: 460px;
+  margin-top: -620px;
+  width: 1000px;
+  height: 620px;
+  box-shadow: 0 0 2px 2px rgb(197, 196, 196);
+}
+.ph2{
+  color: blue;
+  text-align: center;
+ margin-top: -550px;
+}
+
+.addpr{
+  background: #2874f0;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-left: 800px;
+  margin-bottom: 560px;
+}
+.seab{
+  width: 150px;
+  border: none;
+  height: 30px;
+  background-color: seagreen;
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 100px;
+  border-radius: 3px;
+}

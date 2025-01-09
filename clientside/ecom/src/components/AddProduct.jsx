@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
- // Import SCSS file for styling
+ import "./AddProduct.css"
 import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
@@ -85,11 +85,12 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="add-product-container">
+    <div className="addpr-con">
+      <div className="prodm">
       <h2 className="title">Add Product</h2>
-      <form onSubmit={handleSubmit} className="add-product-form">
+      <form onSubmit={handleSubmit} className="product-form">
         <div className="form-field">
-          <label htmlFor="name">Product Name:</label>
+          <label className="lab" htmlFor="name">Product Name:</label><br />
           <input
             type="text"
             id="name"
@@ -97,19 +98,19 @@ const AddProduct = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="input"
+            className="inp"
           />
         </div>
 
-        <div className="form-field">
-          <label htmlFor="category">Category:</label>
+        <div className="forms-field">
+          <label className="lab1" htmlFor="category">Category:</label><br />
           <select
             id="category"
             name="category"
             value={formData.category}
             onChange={handleChange}
             required
-            className="input"
+            className="inp1"
           >
             <option value="" disabled>
               Select Category
@@ -125,8 +126,8 @@ const AddProduct = () => {
           </select>
         </div>
 
-        <div className="form-field">
-          <label htmlFor="price">Price (₹):</label>
+        <div className="for">
+          <label className="lab2" htmlFor="price">Price (₹):</label><br />
           <input
             type="number"
             id="price"
@@ -134,24 +135,24 @@ const AddProduct = () => {
             value={formData.price}
             onChange={handleChange}
             required
-            className="input"
+            className="inp2"
           />
         </div>
 
-        <div className="form-field">
-          <label htmlFor="description">Description:</label>
+        <div className="form1">
+          <label className="lab3" htmlFor="description">Description:</label><br />
           <textarea
             id="description"
             name="description"
             value={formData.description}
             onChange={handleChange}
             required
-            className="input"
+            className="inp3"
           />
         </div>
 
         <div className="form-field">
-          <label htmlFor="quantity">Quantity:</label>
+          <label className="lab4" htmlFor="quantity">Quantity:</label>
           <input
             type="number"
             id="quantity"
@@ -159,7 +160,7 @@ const AddProduct = () => {
             value={formData.quantity}
             onChange={handleChange}
             required
-            className="input"
+            className="inp4"
           />
         </div>
 
@@ -210,6 +211,7 @@ const AddProduct = () => {
           </button>
         </div>
       </form>
+      </div>
     </div>
   );
 };
