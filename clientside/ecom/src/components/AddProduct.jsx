@@ -87,7 +87,7 @@ const AddProduct = () => {
   return (
     <div className="addpr-con">
       <div className="prodm">
-      <h2 className="title">Add Product</h2>
+      <h2 className="titl">Add Product</h2>
       <form onSubmit={handleSubmit} className="product-form">
         <div className="form-field">
           <label className="lab" htmlFor="name">Product Name:</label><br />
@@ -115,14 +115,14 @@ const AddProduct = () => {
             <option value="" disabled>
               Select Category
             </option>
-            <option value="Mobile">Mobile</option>
-            <option value="Laptop">Laptop</option>
-            <option value="Accessories">Accessories</option>
-            <option value="Earbud">Earbud</option>
-            <option value="Trimmer">Trimmer</option>
-            <option value="Charger">Charger</option>
-            <option value="Emergency">Emergency</option>
-            <option value="Speaker">Speaker</option>
+            <option value="Skin care">Skin care</option>
+            <option value="Haircare">Haircare</option>
+            <option value="Nails">Nails</option>
+            <option value="Fragrance">Fragrance</option>
+            <option value="Moisturizer">Moisturizer</option>
+            <option value="Hair removal">Hair removal</option>
+            <option value="Makeup">Makeup</option>
+            <option value="Foundation">Foundation</option>
           </select>
         </div>
 
@@ -151,8 +151,8 @@ const AddProduct = () => {
           />
         </div>
 
-        <div className="form-field">
-          <label className="lab4" htmlFor="quantity">Quantity:</label>
+        <div className="fofi">
+          <label className="lab4" htmlFor="quantity">Quantity:</label><br />
           <input
             type="number"
             id="quantity"
@@ -164,8 +164,9 @@ const AddProduct = () => {
           />
         </div>
 
-        <div className="form-field">
-          <label htmlFor="thumbnail">Thumbnail Image:</label>
+        <div className="field">
+    <div className="fthum">
+          <label className="lab5" htmlFor="thumbnail">Thumbnail Image:</label>
           <input
             type="file"
             id="thumbnail"
@@ -173,17 +174,19 @@ const AddProduct = () => {
             accept="image/*"
             onChange={handleThumbnailChange}
             required
-            className="file-input"
+            className="inp5"
           />
           {thumbnailPreview && (
-            <div className="image-preview">
+            <div className="imgthum">
               <img src={thumbnailPreview} alt="Thumbnail Preview" />
             </div>
           )}
+  </div>
         </div>
 
-        <div className="form-field">
-          <label htmlFor="images">Product Images:</label>
+        <div className="field">
+          <div className="fprim">
+          <label className="lab6" htmlFor="images">Product Images:</label>
           <input
             type="file"
             id="images"
@@ -192,10 +195,10 @@ const AddProduct = () => {
             multiple
             onChange={handleImagesChange}
             required
-            className="file-input"
+            className="inp6"
           />
           {imagesPreview.length > 0 && (
-            <div className="image-previews">
+            <div className="imgpre">
               {imagesPreview.map((img, index) => (
                 <div key={index} className="image-preview">
                   <img src={img} alt={`Product Preview ${index + 1}`} />
@@ -203,10 +206,11 @@ const AddProduct = () => {
               ))}
             </div>
           )}
+          </div>
         </div>
 
-        <div className="form-actions">
-          <button type="submit" className="submit-btn">
+        <div className="actions">
+          <button type="submit" className="subtn">
             Add Product
           </button>
         </div>

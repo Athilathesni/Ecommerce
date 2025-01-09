@@ -220,7 +220,7 @@ const SellerPage = () => {
       {/* Right Section: Products and Add Button */}
       <div className="right-section">
         <h2 className="ph2">Products</h2>
-        <div className="product-grid">
+        <div className="pgrid">
           {Object.keys(productCounts).map((category, index) => (
             <div
               key={index}
