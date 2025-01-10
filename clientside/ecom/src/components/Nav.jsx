@@ -1,9 +1,10 @@
 
-import React from "react";
+import React, { useState } from "react";
 import "./Nav.css"
 import { Link, useNavigate } from "react-router-dom";
 
 const Nav = ({setName}) => {
+  const [dropdownVisible, setDropdownVisible] = useState(false);
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
@@ -12,7 +13,9 @@ const Nav = ({setName}) => {
     alert("Successfully logged out!");
     location.reload()
   };
-
+  const toggleDropdown = () => {
+    setDropdownVisible((prev) => !prev);
+  };
   return (
     <nav className="navbar">
       <div className="navbar-brand">
@@ -28,23 +31,24 @@ const Nav = ({setName}) => {
           onChange={(e) => setName(e.target.value)}
         />
       </div>
-      <div className="nav-links">
+    <div className="nav-links">
         {token ? (
-          <>
-            <div className="dropdown">
-            <button className="profile-icon"></button>
-              {/* <button className="dropdown-btn">Account</button> */}
+          <div className="dropdown">
+            <button className="profile-icon" onClick={toggleDropdown}>
+            </button>
+            {dropdownVisible && (
               <div className="dropdown-content">
                 <Link to="/profile">Profile</Link>
-                <button onClick={handleLogout} className="lod">Logout</button>
+                <button onClick={handleLogout} className="lod">
+                  Logout
+                </button>
               </div>
-            </div>
-          </>
+            )}
+          </div>
         ) : (
           <Link to="/login">
-            <button className="log">
-            Login</button>
-            </Link>
+            <button className="log">Login</button>
+          </Link>
         )}
       </div>
     </nav>

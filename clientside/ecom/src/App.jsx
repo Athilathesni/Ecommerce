@@ -12,7 +12,7 @@ import ProductDetailsPage from "./components/ProductDetailsPage"
 import ResetPassword from "./components/ResetPassword"
 import { useState } from "react"
 import ProductDetails from "./components/ProductDetails"
-
+import Details from "./components/Details"
 
 function App() {
   const [name,setName]=useState("")
@@ -32,6 +32,7 @@ function App() {
         <Route path="/products/:productId" element={<ProductDetailsPage/>}></Route>
         <Route path="/product/:productId" element={<ProductDetails/>}></Route>
         <Route path="/resetPassword" element={<ResetPassword/>}></Route>
+        <Route path="/details/:productId" element={<Details/>}></Route>
       </Routes>
       </BrowserRouter>
     </>
