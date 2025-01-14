@@ -1,0 +1,152 @@
+.cart-container {
+    width: 90%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .cart-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .cart-left, .cart-right {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-left {
+    flex: 2;
+  }
+  
+  .cart-right {
+    flex: 1;
+  }
+  
+  .item-image img {
+    width: 160px;
+    height: 140px;
+  }
+  
+  .item-details {
+    margin-top: -90px;
+    margin-left: 160px;
+  }
+  
+  .item-name{
+    margin-top: -110px;
+    color: rgb(73, 70, 70);
+    font-size: 18px;
+  }
+  .item-prices{
+    color: rgb(7, 117, 62);
+    font-size: 17px;
+    margin-top: -9px;
+  }
+  .item-description{
+    color: gray;
+    margin-top: -15px;
+    font-size: 18px;
+  }
+  
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+   margin-top: 100px;
+   margin-left: -150px;
+  }
+  
+  .quantity-button {
+    background: #2874f0;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .quantity-button:disabled {
+    background: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .cart-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: -30px;
+    margin-left: -30px;
+  }
+  
+  .save-button, .remove-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .save-button {
+    background: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .remove-button {
+    background: #ffffff;
+    color: #0c0707;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .price-details {
+    font-size: 14px;
+  }
+  
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  
+  .price-row.total {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+  
+  .continue-shopping {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #2874f0;
+    font-weight: bold;
+  }
+  .placeor{
+    width: 794px;
+    height: 80px;
+    border-radius: 6px;
+    box-shadow: 0 0 2px 2px rgb(228, 225, 225);
+    margin-top: 1px;
+  }
+  .place-order-button{
+    width: 200px;
+    height: 40px;
+    margin-top: 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(228, 91, 12);
+    color: rgb(250, 246, 246);
+    font-weight: bold;
+    float: right;
+  }
+  
