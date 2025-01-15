@@ -14,6 +14,7 @@ import { useState } from "react"
 import ProductDetails from "./components/ProductDetails"
 import Details from "./components/Details"
 import Cart from "./components/Cart"
+import Buyerpro from"./components/Buyerpro"
 function App() {
   const [name,setName]=useState("")
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/resetPassword" element={<ResetPassword/>}></Route>
         <Route path="/details/:productId" element={<Details/>}></Route>
         <Route path="/cart/:productId" element={<Cart/>}></Route>
+        <Route path="/buyer" element={<Buyerpro/>}></Route>
       </Routes>
       </BrowserRouter>
     </>
