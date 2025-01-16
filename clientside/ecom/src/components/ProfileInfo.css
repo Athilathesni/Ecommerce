@@ -6,8 +6,8 @@
   background-color: rgb(228, 225, 225);
   width: 600px;
   height: 500px;
-  margin-left: 350px;
-  margin-top: -520px;
+  margin-left: 325px;
+  margin-top: -500px;
 }
 .profile-title{
   color: blue;
@@ -33,8 +33,9 @@
 }
 .address21{
   background-color: rgb(202, 195, 195);
-  width: 940px;
+  width: 905px;
   margin-left: 20px;
+  margin-top: -15px;
 }
 .add-address-btn{
   background: #2874f0;
@@ -45,7 +46,7 @@
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s;
-  margin-left: 880px;
+  margin-left: 860px;
   margin-bottom: 10px;
 }
 .address-title{
@@ -53,7 +54,7 @@
   margin-left: 10px;
   margin-top: 20px;
 }
-.save-address{
+.save-btn{
   color: white;
   background-color: seagreen;
   border: none;
@@ -65,6 +66,18 @@
   margin-left: 20px;
   margin-bottom: 10px;
 }
+.cancel-btn{
+  color: rgb(5, 5, 5);
+  background-color: rgb(220, 223, 221);
+  border: none;
+  border-radius: 3px;
+  width: 90px;
+  height: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+  /* margin-left: 20px; */
+  margin-bottom: 10px;
+}
 .seller-btn{
   color: white;
   background-color: seagreen;
@@ -73,7 +86,6 @@
   width: 90px;
   height: 30px;
   font-weight: bold;
-  margin-top: -30px;
   margin-left: 500px;
   margin-bottom: 10px;
 }

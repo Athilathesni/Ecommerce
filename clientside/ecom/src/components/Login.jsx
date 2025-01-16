@@ -27,7 +27,7 @@ const Login = () => {
       console.log(formData);
 
       // Sending data to the backend
-      const res = await axios.post("http://localhost:3001/api/login", formData);
+      const res = await axios.post("http://localhost:3000/api/login", formData);
 
       console.log(res.data); // Debugging response
       if (res.status === 201) {

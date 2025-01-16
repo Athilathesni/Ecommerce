@@ -11,7 +11,7 @@ const Details = () => {
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const res = await axios.get(`http://localhost:3001/api/getProduct/${productId}`, {
+        const res = await axios.get(`http://localhost:3000/api/getProduct/${productId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 

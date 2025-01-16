@@ -23,7 +23,7 @@ const SellerPage = () => {
   useEffect(() => {
     const fetchCompanyDetails = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/api/getCompany", {
+        const res = await axios.get("http://localhost:3000/api/getCompany", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -45,7 +45,7 @@ const SellerPage = () => {
 
     const fetchProductCounts = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/api/getProducts", {
+        const res = await axios.get("http://localhost:3000/api/getProducts", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -81,7 +81,7 @@ const SellerPage = () => {
     try {
       // Add company details
       const res = await axios.post(
-        "http://localhost:3001/api/addCompany",
+        "http://localhost:3000/api/addCompany",
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );

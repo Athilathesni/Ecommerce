@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import "./ResetPassword.css";
 import { useNavigate } from "react-router-dom";
 
 const ResetPassword = () => {
@@ -29,7 +29,7 @@ const ResetPassword = () => {
     try {
         let pass=password
         let cpass=confirmPassword
-      const res = await axios.put("http://localhost:3001/api/updatePassword", {
+      const res = await axios.put("http://localhost:3000/api/updatePassword", {
           pass,
           cpass,
           email,

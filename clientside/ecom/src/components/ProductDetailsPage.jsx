@@ -79,11 +79,12 @@ const ProductDetailsPage = () => {
   const navigate = useNavigate(); // Use navigate for navigation
   const token = localStorage.getItem("token");
   const [product, setProduct] = useState(null);
+  const [isInCart, setIsInCart] = useState(false);
 
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const res = await axios.get(`http://localhost:3001/api/getProduct/${productId}`, {
+        const res = await axios.get(`http://localhost:3000/api/getProduct/${productId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -95,12 +96,49 @@ const ProductDetailsPage = () => {
       }
     };
 
+  
+    const checkProductInCart = async () => {
+      try {
+        const res = await axios.get(`http://localhost:3000/api/findOnCart/${productId}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+
+        if (res.status === 201 && res.data.cart) {
+          setIsInCart(true);
+        }
+      } catch (error) {
+        console.error("Error checking cart:", error);
+      }
+    };
+
     fetchProductDetails();
+    checkProductInCart();
   }, [productId, token]);
+
+  const handleAddToCart = async () => {
+    try {
+      const res = await axios.post(`http://localhost:3000/api/addCart`,
+        {
+          productID: productId,
+        },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+
+      if (res.status === 201) {
+        alert("Added to cart Successfully");
+        setIsInCart(true);
+      }
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+    }
+  };
 
   if (!product) {
     return <p>Loading...</p>;
   }
+
 
   return (
     <div className="product-details-page">
@@ -129,10 +167,15 @@ const ProductDetailsPage = () => {
           <p className="product-quantity">Available Quantity: {product.quantity}</p>
 
           <div className="button-group">
-            <Link to={`/cart/${product._id}`} key={product._id}>
-            <button className="add-to-cart-button" >
-              Add to Cart
-            </button></Link>
+          {isInCart ? (
+              <button className="go-to-cart-button" onClick={() => navigate("/cart")}>
+                Go to Cart
+              </button>
+            ) : (
+              <button className="add-to-cart-button" onClick={handleAddToCart}>
+                Add to Cart
+              </button>
+            )}
             <button className="buy-now-button">Buy Now</button>
           </div>
         </div>

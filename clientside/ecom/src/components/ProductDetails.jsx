@@ -12,7 +12,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const res = await axios.get(`http://localhost:3001/api/getProduct/${productId}`, {
+        const res = await axios.get(`http://localhost:3000/api/getProduct/${productId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -56,11 +56,6 @@ const ProductDetails = () => {
           <p className="product-price">₹{product.price}</p>
           <p className="product-description">{product.description}</p>
           <p className="product-quantity">Available Quantity: {product.quantity}</p>
-
-          {/* <div className="button-group">
-            <button className="add-to-cart-button">Edit</button>
-            <button className="buy-now-button">Delete</button>
-          </div> */}
         </div>
       </div>
     </div>

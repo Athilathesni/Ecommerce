@@ -1,6 +1,4 @@
 
-
-
 import React, { useState, useEffect } from "react";
 import "./ProfileInfo.css"
 import axios from "axios";
@@ -30,7 +28,7 @@ const ProfileInfo = () => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/api/getuserData", {
+        const res = await axios.get("http://localhost:3000/api/getuserData", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (res.status === 200) {
@@ -54,7 +52,7 @@ const ProfileInfo = () => {
   useEffect(() => {
     const fetchUserAddresses = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/api/getUserAddresses", {
+        const res = await axios.get("http://localhost:3000/api/getUserAddresses", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (res.status === 200) {
@@ -85,7 +83,7 @@ const ProfileInfo = () => {
   const handleSave = async () => {
     try {
       const res = await axios.put(
-        "http://localhost:3001/api/updateUser",
+        "http://localhost:3000/api/updateUser",
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -102,7 +100,7 @@ const ProfileInfo = () => {
   const handleAddAddress = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3001/api/addAddress",
+        "http://localhost:3000/api/addAddress",
         address,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -116,20 +114,18 @@ const ProfileInfo = () => {
       console.error("Error adding address:", error);
     }
   };
-
   return (
     <div className="profile-container">
       <div className="profile-card">
-        {/* {userDetails?.accType === "Seller" && (
+      {userDetails?.accType === "seller" && (
           <button className="seller-btn" onClick={() => navigate("/sellerPage")}>
             Seller Page
           </button>
-        )} */}
-
+        )}
         <h2 className="profile-title">Profile Details</h2>
-        <button className="seller-btn" onClick={() => navigate("/sellerPage")}>
+        {/* <button className="seller-btn" onClick={() => navigate("/sellerPage")}>
             Seller Page
-          </button>
+          </button> */}
         <div className="profile-fields">
           {Object.entries(formData).map(([key, value]) => (
             <div className="profile-field" key={key}>
@@ -151,7 +147,7 @@ const ProfileInfo = () => {
         ) : (
           <div className="action-buttons">
             <button className="save-btn" onClick={handleSave}>
-              Save Changes
+              Save
             </button>
             <button className="cancel-btn" onClick={() => setIsEditing(false)}>
               Cancel

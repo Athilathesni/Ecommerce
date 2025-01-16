@@ -39,7 +39,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:3001/api/adduser', formData);
+      const response = await axios.post('http://localhost:3000/api/adduser', formData);
 
       // Handle success
       if (response.status === 201) {
