@@ -10,3 +10,4 @@ const sellerSchema = new mongoose.Schema({
 })
 
 export default mongoose.model.sellerAddress||mongoose.model('sellerAddress',sellerSchema)
+
