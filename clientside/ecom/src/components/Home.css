@@ -1,4 +1,4 @@
-.home-page{
+/* .home-page{
   width: 100%;
   height: 100%;
 }
@@ -6,7 +6,7 @@
   display: flex;
   width: 300px;
 }
-/* image */
+
 .pthu {
   width: 200px;
   height: 190px;
@@ -14,11 +14,11 @@
   margin-right: 10px;
   margin-top: 10px;
   cursor: pointer;
-  transition: transform 0.1s ease; /* Add a smooth transition */
+  transition: transform 0.1s ease; 
 }
 
 .pthu:hover {
-  transform: scale(1.1); /* Zoom in by 10% */
+  transform: scale(1.1); 
 }
 
 
@@ -47,4 +47,127 @@
 }
 .np{
   margin-top: 20px;
+} */
+ /* Base Styles */
+.home-page {
+  width: 100%;
+  height: 100%;
+}
+
+.product-grid {
+  display: flex;
+  width: 300px;
+  /* flex-wrap: wrap;  */
+  justify-content: space-between;
+}
+
+.pthu {
+  width: 200px;
+  height: 190px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: transform 0.1s ease; /* Add a smooth transition */
+}
+
+.pthu:hover {
+  transform: scale(1.1); /* Zoom in by 10% */
+}
+
+.proit {
+  text-decoration: none;
+  width: 230px;
+  height: 270px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(221, 214, 214);
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-left: 12px;
+}
+
+.nam {
+  margin-left: 65px;
+  text-decoration: none;
+  color: blue;
+}
+
+.price {
+  display: flex;
+  color: rgb(12, 14, 12);
+  font-weight: bold;
+  margin-left: 60px;
+}
+
+.np {
+  margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .product-grid {
+    justify-content: center; /* Center items on medium screens */
+  }
+
+  .proit {
+    width: 45%; /* Take up 45% of the width on medium screens */
+    margin-left: 10px;
+  }
+
+  .pthu {
+    width: 180px; /* Adjust image size on smaller screens */
+    height: 170px;
+  }
+
+  .price {
+    font-size: 14px; /* Adjust price font size */
+    margin-left: 10px; /* Reduce margin */
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center;
+  }
+
+  .proit {
+    width: 80%; /* Increase width on smaller screens */
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .pthu {
+    width: 150px; /* Reduce image size further */
+    height: 140px;
+  }
+
+  .nam {
+    margin-left: 0; /* Center the name */
+    text-align: center;
+  }
+
+  .price {
+    font-size: 12px; /* Make the price smaller on small screens */
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .proit {
+    width: 100%; /* Make the product card full width on very small screens */
+    margin-left: 0;
+  }
+
+  .pthu {
+    width: 120px; /* Make images smaller on extra small screens */
+    height: 110px;
+  }
+
+  .price {
+    font-size: 12px; /* Keep price font size small */
+    margin-left: 0;
+    justify-content: center;
+  }
 }

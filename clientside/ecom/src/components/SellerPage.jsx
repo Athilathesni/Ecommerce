@@ -128,69 +128,69 @@ const SellerPage = () => {
           // When adding a company, show the form with input fields
           <form className="company-form">
             <div className="form-field">
-              <label  htmlFor="company-name">Company Name:</label>
+              <label className="inpu"  htmlFor="company-name">Company Name:</label>
               <input
                 type="text"
                 id="company-name"
                 name="companyName"
                 value={formData.companyName}
                 onChange={handleChange}
-                 className="lbl"
+                 className="lbl1"
               />
             </div>
             <div className="form-field">
-              <label htmlFor="place">Place:</label>
+              <label  className="inpu"  htmlFor="place">Place:</label>
               <input
                 type="text"
                 id="place"
                 name="place"
                 value={formData.place}
                 onChange={handleChange}
-                 className="lbl"
+                 className="lbl1"
               />
             </div>
             <div className="form-field">
-              <label  htmlFor="pincode">Pincode:</label>
+              <label  className="inpu"  htmlFor="pincode">Pincode:</label>
               <input
                 type="text"
                 id="pincode"
                 name="pincode"
                 value={formData.pincode}
                 onChange={handleChange}
-                className="lbl"
+                className="lbl1"
               />
             </div>
             <div className="form-field">
-              <label  htmlFor="district">District:</label>
+              <label  className="inpu"  htmlFor="district">District:</label>
               <input
                 type="text"
                 id="district"
                 name="district"
                 value={formData.district}
                 onChange={handleChange}
-                className="lbl"
+                className="lbl1"
               />
             </div>
             <div className="form-field">
-              <label htmlFor="state">State:</label>
+              <label  className="inpu"  htmlFor="state">State:</label>
               <input
                 type="text"
                 id="state"
                 name="state"
                 value={formData.state}
                 onChange={handleChange}
-                 className="lbl"
+                 className="lbl1"
               />
             </div>
             <div className="form-field">
-              <label htmlFor="country">Country:</label>
+              <label  className="inpu"  htmlFor="country">Country:</label>
               <input
                 type="text"
                 id="country"
                 name="country"
                 value={formData.country}
                 onChange={handleChange}
-                 className="lbl"
+                 className="lbl1"
               />
             </div>
             <div className="form-actions">

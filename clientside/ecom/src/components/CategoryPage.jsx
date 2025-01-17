@@ -30,7 +30,6 @@ const CategoryPage = () => {
 
   return (
     <div className="category-page">
-     
       {products.length > 0 ? (
         <div className="grid">
            <h2 className="kj">Products</h2>

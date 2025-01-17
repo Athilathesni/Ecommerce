@@ -1,12 +1,16 @@
 
-.login-page {
-  display: flex;
-  height: 600px; /* Full screen height */
-  flex-direction: row;
+/* Base styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f1f3f6;
 }
 
-/* Left section - Heading area */
-
+.login-page {
+  display: flex;
+  height: 600px;
+  flex-direction: row;
+}
 
 .login-header h2 {
   color: white;
@@ -14,14 +18,12 @@
   font-family: 'Arial', sans-serif;
 }
 
-/* Right section - Form area */
 .right-section {
   flex: 2;
-  background-color: #f4f4f4; /* Light grey background for right section */
+  background-color: #f4f4f4; 
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 200px;
 }
 
@@ -39,13 +41,6 @@ form {
 .form-group {
   margin-bottom: 15px;
 }
-
-/* .in1 {
- 
-  padding: 10px;
-  margin: 5px 0;
-  font-size: 1rem;
-} */
 
 .btn-login1 {
   width: 450px;
@@ -98,10 +93,9 @@ form {
   color: rgb(116, 4, 4);
 }
 
-/* Login.css */
 .in1 {
   border: none;
-  border-bottom: 1px solid #333; /* You can change the color to fit your design */
+  border-bottom: 1px solid #333; 
   padding: 10px;
   margin-bottom: 20px;
   font-size: 16px;
@@ -110,7 +104,7 @@ form {
 }
 
 .in1:focus {
-  border-bottom: 1px solid #007BFF; /* Change to the color of your choice for focus */
+  border-bottom: 1px solid #007BFF;
 }
 
 .form-group {
@@ -121,15 +115,8 @@ form {
   width: 100%;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f1f3f6;
-}
-
 .login-container {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   height: 100vh;
 }
@@ -141,22 +128,21 @@ body {
   height: 60%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  margin-left: 350px;
+  margin-left: 200px;
   margin-top: -200px;
 }
-.img1{
+
+.img1 {
   width: 200px;
   margin-top: 60px;
   margin-left: 20px;
 }
+
 .login-left {
   width: 300px;
   height: 345px;
   background-color: #2874f0;
   color: white;
-  /* display: flex;
-  flex-direction: column; */
-  /* justify-content: center; */
   padding: 20px;
 }
 
@@ -164,13 +150,11 @@ body {
   color: #ccc;
   font-size: 24px;
   margin-top: 20px;
- 
 }
 
 .login-left p {
- margin-top: 10px;
+  margin-top: 10px;
   font-size: 20px;
- 
 }
 
 .login-right {
@@ -204,4 +188,115 @@ body {
 
 .login-button:hover {
   background-color: #e5590f;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .login-box {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: -150px;
+  }
+
+  .login-left {
+    width: 40%;
+    padding: 15px;
+  }
+
+  .login-right {
+    width: 60%;
+  }
+
+  .login-input {
+    width: 90%;
+  }
+
+  .btn-login1 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .login-box {
+    flex-direction: column;
+    height: auto;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .login-left, .login-right {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .login-input {
+    width: 90%;
+  }
+
+  .btn-login1 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    padding: 20px;
+  }
+
+  .login-box {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    margin-top: 0;
+    box-shadow: none;
+  }
+
+  .login-left {
+    height: auto;
+    padding: 15px;
+  }
+
+  .img1 {
+    width: 150px;
+    margin-top: 20px;
+  }
+
+  .login-right {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .login-input {
+    width: 90%;
+  }
+
+  .btn-login1 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-header h2 {
+    font-size: 2rem;
+  }
+
+  .login-left h2 {
+    font-size: 20px;
+  }
+
+  .login-left p {
+    font-size: 16px;
+  }
+
+  .login-input {
+    width: 100%;
+  }
+
+  .btn-login1 {
+    width: 100%;
+  }
+
+  .login-left, .login-right {
+    padding: 10px;
+  }
 }

@@ -190,7 +190,7 @@ const ProfileInfo = () => {
                 />
               </div>
             ))}
-            <button className="save-address" onClick={handleAddAddress}>
+            <button className="save-btn" onClick={handleAddAddress}>
               Save
             </button>
           </div>

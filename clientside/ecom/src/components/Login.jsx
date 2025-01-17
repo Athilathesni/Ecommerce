@@ -52,7 +52,7 @@ const Login = () => {
        <div className="login-box">
       <div className="login-left">
         <h2 className="h2">𝗟𝗢𝗚𝗜𝗡</h2>
-        <p>Get access to your Orders, Wishlist, and Recommendations</p>
+        <p className="sigp">Get access to your Orders, Wishlist, and Recommendations</p>
         <img src={loginimg} alt=""  className="img1"/>
       </div>
 
