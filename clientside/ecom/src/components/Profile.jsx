@@ -53,7 +53,7 @@ const Profile = () => {
           <>
           <button className="car1" onClick={() => handleSectionChange("cart")}>Cart</button>
           <button className="wi1" onClick={() => handleSectionChange("wishlist")}>Wishlist</button>
-          <button className="wi1" onClick={() => handleSectionChange("orders")}>My Orders</button><br />
+          <button className="wi1" onClick={() => handleSectionChange("myorder")}>My Orders</button><br />
         </>
        )} 
           <button className="lou" onClick={handleLogout}>Logout</button>
