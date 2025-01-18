@@ -1,4 +1,4 @@
-  /* .cart-container {
+  .cart-container {
     height: 530px;
     justify-content: space-between;
     padding: 20px;
@@ -16,13 +16,14 @@
     margin-left: 100px;
     background-color: #fff;
     border-radius: 5px;
+    margin-top: 40px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
   .bisection{
     float: right;
     width: 400px;
     height: 214px;
-    margin-top: 25px;
+    margin-top: -250px;
     margin-right: 100px;
     margin-left: -30px;
     background-color: #fff;
@@ -32,14 +33,14 @@
     padding: 20px;
   }
   .undb{
-    width: 700px;
+    width: 400px;
     height: 70px;
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(194, 193, 193);
     border-radius: 5px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 44px;
-    margin-left: -730px;
+    margin-top: 3px;
+    margin-left: -20px;
   }
   .pobutton{
     width: 200px;
@@ -54,11 +55,11 @@
     font-weight: bold;
     text-transform: uppercase;
   }
-  .cart-items-section {
+  .carti-section {
     width: 65%;
   }
   
-  .cart-items-section h2 {
+  .carti-section h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
   }
@@ -80,31 +81,33 @@
     margin-right: 20px;
   }
   
-  .cart-item-details h3 {
+  .cartdi h3 {
     font-size: 1rem;
-    margin-top: -100px;
+    margin-top: -130px;
+    margin-left: 220px;
     
   }
   
-  .cart-item-details p {
+  .cartdi p {
     font-size: 0.9rem;
     margin-bottom: 10px;
+    margin-left: 220px;
   
   }
   .des{
-    margin-top: -10px;
+    margin-top: -1px;
   }
   .pri{
     color:seagreen;
     margin-top: 10px;
   }
-  .quantity-controls {
-   margin-top: 100px;
-   margin-left: -200px;
+  .qucont {
+   margin-top: 90px;
+   margin-left: 30px;
     align-items: center;
   }
   
-  .quantity-controls button {
+  .qucont button {
     width: 30px;
     height: 30px;
     border: none;
@@ -116,16 +119,16 @@
     transition: 0.2s;
   }
   
-  .quantity-controls button:hover {
+  .qucont button:hover {
     background-color: #0b5ed7;
   }
   
-  .quantity-controls button:disabled {
+  .qucont button:disabled {
     background-color: #d3d3d3;
     cursor: not-allowed;
   }
   
-  .quantity-controls span {
+  .qucont span {
     margin: 0 10px;
     font-size: 1rem;
     color: #333;
@@ -135,7 +138,7 @@
    
   }
   .dbutton {
-    margin-left: 80px;
+    margin-left: 260px;
     background-color: transparent;
     border: none;
     color: #000000;
@@ -151,7 +154,7 @@
     color: #215dac;
   }
   .sbutton {
-    margin-left: -50px;
+    margin-left: 130px;
     background-color: transparent;
     border: none;
     color: #000000;
@@ -213,10 +216,10 @@
     text-align: center;
     color: #333;
   } 
-   */
+  
   
 
-
+/* 
    .cart-container {
     height: auto;
     justify-content: space-between;
@@ -246,7 +249,7 @@
     width: 100%;
     max-width: 400px;
     height: 250px;
-    margin-top: -500px;
+    margin-top: -400px;
     margin-right: 120px;
     background-color: #fff;
     border-radius: 5px;
@@ -458,4 +461,4 @@
       font-size: 14px;
     }
   }
-  
+   */

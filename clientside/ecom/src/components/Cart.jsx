@@ -163,7 +163,7 @@ const Cart = () => {
 
   return (
     <div className="cart-container">
-      <div className="cart-items-section">
+      <div className="carti-section">
         <p className="hea">Your Cart</p>
         <div className="cart-left">
         {cartItems.length > 0 ? (
@@ -176,11 +176,11 @@ const Cart = () => {
                   alt={item.name}
                   className="caimage"
                 /></div>
-                <div className="cart-item-details">
+                <div className="cartdi">
                   <h3><b> Name:</b>{item.name}</h3>
                   <p className="des"><b> Des:</b>{item.description}</p>
                   <p className="pri"><b> Price:</b> ₹{item.price}</p>
-                  <div className="quantity-controls">
+                  <div className="qucont">
                     <button
                       onClick={() => decrementQuantity(item.productID)}
                       disabled={item.quantity <= 1}
