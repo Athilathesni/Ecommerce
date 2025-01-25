@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
  import "./Cart.css";
@@ -146,12 +145,15 @@ const Cart = () => {
         alert("Order placed successfully!");
         setCartItems([]);
         setSelectedAddress(null);
+        // Navigate to the success page
+        navigate("/success"); // This will route to the OrderSuccess component
       }
     } catch (err) {
       console.error("Error placing order:", err);
       setError("Failed to place the order. Please try again.");
     }
   };
+  
 
   if (loading) {
     return <div className="cart-content">Loading your cart...</div>;
@@ -163,7 +165,7 @@ const Cart = () => {
 
   return (
     <div className="cart-container">
-      <div className="carti-section">
+      <div className="cart-items-section">
         <p className="hea">Your Cart</p>
         <div className="cart-left">
         {cartItems.length > 0 ? (
@@ -176,11 +178,11 @@ const Cart = () => {
                   alt={item.name}
                   className="caimage"
                 /></div>
-                <div className="cartdi">
+                <div className="cart-item-details">
                   <h3><b> Name:</b>{item.name}</h3>
                   <p className="des"><b> Des:</b>{item.description}</p>
                   <p className="pri"><b> Price:</b> ₹{item.price}</p>
-                  <div className="qucont">
+                  <div className="quantity-controls">
                     <button
                       onClick={() => decrementQuantity(item.productID)}
                       disabled={item.quantity <= 1}
@@ -196,8 +198,7 @@ const Cart = () => {
                   <button
                     className="sbutton">
                     Save For Later
-                  </button></div>
-                 <div className="de1">
+                  </button>
                   <button
                     className="dbutton"
                     onClick={() => deleteItem(item.productID)}
@@ -230,7 +231,7 @@ const Cart = () => {
         <b className="bd">Delivery Charge:</b>{" "}
         <span className="spa2">{bill > 500 ? 0 : 50}</span> {/* Free delivery for orders above ₹500 */}
       </p>
-      <p>_____________________________________________</p>
+      <p>________________________________________________</p>
       <p>
         <b className="bd1">Total Amount:</b>{" "}
         <span className="spa1">
@@ -248,6 +249,7 @@ const Cart = () => {
                 <input
                   type="radio"
                   name="address"
+                  className="dw"
                   value={index}
                   onChange={() => setSelectedAddress(address)}
                 />
@@ -275,7 +277,6 @@ const Cart = () => {
     </div>
   </div>
 )}
-
     </div>
   );
 };

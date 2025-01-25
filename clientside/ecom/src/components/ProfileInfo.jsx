@@ -142,7 +142,7 @@ const ProfileInfo = () => {
         </div>
         {!isEditing ? (
           <button className="edit-btn1" onClick={() => setIsEditing(true)}>
-            Edit Profile
+            Edit
           </button>
         ) : (
           <div className="action-buttons">

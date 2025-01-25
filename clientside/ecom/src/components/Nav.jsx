@@ -18,6 +18,7 @@ const Nav = ({ setName }) => {
     localStorage.removeItem("token");
     localStorage.removeItem("acctype"); 
     alert("Successfully logged out!");
+    navigate('/login')
     location.reload();
   };
 

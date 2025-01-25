@@ -17,6 +17,7 @@ import Cart from "./components/Cart"
 import Myorder from "./components/Myorder"
 import Sellore from "./components/Sellore"
 import WishList from "./components/WishList"
+import Ordersuccess from "./components/Ordersuccess"
 function App() {
   const [name,setName]=useState("")
   return (
@@ -37,9 +38,10 @@ function App() {
         <Route path="/resetPassword" element={<ResetPassword/>}></Route>
         <Route path="/details/:productId" element={<Details/>}></Route>
         <Route path="/cart" element={<Cart/>}></Route>
-        <Route path="/myorder" element={<Myorder/>}></Route>
+        <Route path="/orders" element={<Myorder/>}></Route>
         <Route path="/sellerOrder" element={<Sellore/>}></Route>
         <Route path="/wishlist" element={<WishList/>}></Route>
+        <Route path="/success" element={<Ordersuccess />} />
       </Routes>
       </BrowserRouter>
     </>

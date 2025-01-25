@@ -1,11 +1,13 @@
-import React, { useState,useEffect } from "react";
+
+
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ProfileInfo from "./ProfileInfo";
 import axios from "axios";
 import Cart from "./Cart";
 import WishList from "./WishList";
-import "./Profile.css"
-import Myorder from "./Myorder"
+import "./Profile.css";
+import Myorder from "./Myorder";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -41,6 +43,22 @@ const Profile = () => {
 
   const handleSectionChange = (section) => {
     setActiveSection(section);
+    switch (section) {
+      case "profile":
+        navigate("/profile");
+        break;
+      case "cart":
+        navigate("/cart");
+        break;
+      case "wishlist":
+        navigate("/wishlist");
+        break;
+      case "orders":
+        navigate("/orders");
+        break;
+      default:
+        navigate("/profile");
+    }
   };
 
   return (
@@ -48,22 +66,33 @@ const Profile = () => {
       <div className="profile-sidebar">
         <h2 className="acc">My Account</h2>
         <div>
-          <button className="pro1" onClick={() => handleSectionChange("profile")}>Profile</button>
+          <button className="pro1" onClick={() => handleSectionChange("profile")}>
+            Profile
+          </button>
           {accType === "buyer" && (
-          <>
-          <button className="car1" onClick={() => handleSectionChange("cart")}>Cart</button>
-          <button className="wi1" onClick={() => handleSectionChange("wishlist")}>Wishlist</button>
-          <button className="wi1" onClick={() => handleSectionChange("myorder")}>My Orders</button><br />
-        </>
-       )} 
-          <button className="lou" onClick={handleLogout}>Logout</button>
+            <>
+              <button className="car1" onClick={() => handleSectionChange("cart")}>
+                Cart
+              </button>
+              <button className="wi1" onClick={() => handleSectionChange("wishlist")}>
+                Wishlist
+              </button>
+              <button className="wi1" onClick={() => handleSectionChange("orders")}>
+                Orders
+              </button>
+              <br />
+            </>
+          )}
+          <button className="lou" onClick={handleLogout}>
+            Logout
+          </button>
         </div>
       </div>
       <div className="profile-content">
         {activeSection === "profile" && <ProfileInfo />}
-        {activeSection === "cart" && accType === "buyer" &&  <Cart />}
-        {activeSection === "wishlist" && accType === "buyer" &&  <WishList />}
-        {activeSection === "myorder" && accType === "buyer" &&  <Myorder/>}
+        {activeSection === "cart" && accType === "buyer" && <Cart />}
+        {activeSection === "wishlist" && accType === "buyer" && <WishList />}
+        {activeSection === "myorder" && accType === "buyer" && <Myorder />}
       </div>
     </div>
   );

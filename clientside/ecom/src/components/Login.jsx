@@ -19,59 +19,28 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setError(""); 
-
-  //   try {
-  //     console.log(formData);
-
-     
-  //     const res = await axios.post("http://localhost:3000/api/login", formData);
-
-  //     console.log(res.data); 
-  //     if (res.status === 201) {
-        
-  //       localStorage.setItem("token", res.data.token);
-  //       alert("Successfully logged in!");
-  //       navigate("/");
-  //     } else {
-       
-  //       alert(res.data.msg);
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //     setError(
-  //       error.response?.data?.message || "Login failed. Please try again."
-  //     );
-  //   }
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(""); // Reset error state before submitting
-  
+
     try {
       console.log(formData);
-  
+
       // Sending data to the backend
       const res = await axios.post("http://localhost:3000/api/login", formData);
-  
+
       console.log(res.data); // Debugging response
       if (res.status === 201) {
-        // Assuming the backend sends a token, userType, and success message
-        const { token, accType } = res.data;
-  
-        // Store the token in localStorage
+        const { token, accType } = res.data; // Assuming acctype indicates 'buyer' or 'seller'
         localStorage.setItem("token", token);
-  
+
         alert("Successfully logged in!");
-  
-        // Redirect based on userType
         if (accType === "buyer") {
-          navigate("/"); // Redirect to the homepage for buyers
+          navigate("/"); // Redirect to the buyer's homepage
         } else if (accType === "seller") {
-            navigate("/profile"); // Redirect to the seller profile for sellers
+          navigate("/profile"); // Redirect to the seller's dashboard
+        } else {
+          alert("Invalid account type!");
         }
       } else {
         // Handle other responses from the backend
