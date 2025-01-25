@@ -2,6 +2,7 @@ import userSchema from "./model/user.js"
 import addressSchema from "./model/address.js"
 import sellerSchema from "./model/seller.js"
 import productSchema from "./model/product.js"
+import wishListSchema from "./model/wishlist.js";
 import cartSchema from "./model/cart.js"
 import sellerOrderSchema from "./model/sellero.js"
 import buyerOrderSchema from './model/buyer.js'
@@ -42,17 +43,51 @@ export async function addUser(req, res) {
 }
 
 
+// export async function login(req, res) { 
+//     const { email, pass } = req.body
+//     if (!(email && pass))
+//       return res.status(500).send({ msg: "fields are empty" })
+//     const user = await userSchema.findOne({ email })
+//     if (!user) return res.status(500).send({ msg: "email donot exist" })
+//     const success = await bcrypt.compare(pass, user.pass)
+//     if (success !== true)
+//       return res.status(500).send({ msg: "email or password not exist" })
+//     const token = await sign({ UserID: user._id }, process.env.JWT_KEY, {expiresIn: "24h",})
+//     res.status(201).send({ token })
+// }
+
 export async function login(req, res) { 
-    const { email, pass } = req.body
-    if (!(email && pass))
-      return res.status(500).send({ msg: "fields are empty" })
-    const user = await userSchema.findOne({ email })
-    if (!user) return res.status(500).send({ msg: "email donot exist" })
-    const success = await bcrypt.compare(pass, user.pass)
-    if (success !== true)
-      return res.status(500).send({ msg: "email or password not exist" })
-    const token = await sign({ UserID: user._id }, process.env.JWT_KEY, {expiresIn: "24h",})
-    res.status(201).send({ token })
+  const { email, pass } = req.body;
+
+  // Check if fields are empty
+  if (!(email && pass)) {
+    return res.status(500).send({ msg: "Fields are empty" });
+  }
+
+  // Find user by email
+  const user = await userSchema.findOne({ email });
+  if (!user) {
+    return res.status(500).send({ msg: "Email does not exist" });
+  }
+
+  // Compare password
+  const success = await bcrypt.compare(pass, user.pass);
+  if (success !== true) {
+    return res.status(500).send({ msg: "Email or password is incorrect" });
+  }
+
+  // Generate JWT token
+  const token = await sign(
+    { UserID: user._id },
+    process.env.JWT_KEY,
+    { expiresIn: "24h" }
+  );
+
+  // Send response with token and acctype
+  res.status(201).send({
+    token, // Authentication token
+    accType: user.accType // User account type (e.g., 'buyer' or 'seller')
+  });
 }
 
 export async function verifyEmail(req, res) {
@@ -616,4 +651,71 @@ export async function addProduct(req, res) {
       });
     }
   }
+  export async function addToWishlist(req, res){
+    const productID = req.params.productId;
+    const buyerID = req.user.UserID
+    try {
+      const exists = await wishListSchema.findOne({ buyerID, productID });
+      if (exists) {
+        return res.status(400).json({ message: "Product is already in wishlist." });
+      }
+  
+      await wishListSchema.create({buyerID,productID})
+      res.status(200).json({ message: "Added to wishlist successfully." });
+    } catch (error) {
+      console.error("Error adding to wishlist:", error);
+      res.status(500).json({ message: "Internal server error." });
+    }
+  };
+  
+  export async function removeFromWishlist(req, res){
+    const productID = req.params.productId;
+    const buyerID = req.user.UserID
+    try {
+      const result = await wishListSchema.findOneAndDelete({ buyerID, productID });
+      if (!result) {
+        return res.status(404).json({ message: "Product not found in wishlist." });
+      }
+  
+      res.status(200).json({ message: "Removed from wishlist successfully." });
+    } catch (error) {
+      console.error("Error removing from wishlist:", error);
+      res.status(500).json({ message: "Internal server error." });
+    }
+  };
+  
+  
+  export async function checkWishlist(req, res){
+    const productID = req.params.productId;
+    const buyerID = req.user.UserID
+    try {
+      const exists = await wishListSchema.findOne({ buyerID, productID });
+      res.status(200).json({ isFavorite: !!exists });
+    } catch (error) {
+      console.error("Error checking wishlist:", error);
+      res.status(500).json({ message: "Internal server error." });
+    }
+  };
+  
+  
+  export async function getWishList(req, res) {
+    try {
+      const exists = await wishListSchema.find({ buyerID: req.user.UserID });
+  
+      const wishList = await Promise.all(exists.map(async (item) => {
+        const product = await productSchema.findById(item.productID);
+        return {
+          productId:item.productID,
+          name: product.name, 
+          thumbnail: product.thumbnail, 
+          price: product.price,
+        };
+      }));
+      res.status(200).json(wishList);
+    } catch (error) {
+      console.error("Error checking wishlist:", error);
+      res.status(500).json({ message: "Internal server error." });
+    }
+  }
+  
   
