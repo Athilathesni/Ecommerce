@@ -12,7 +12,9 @@ body {
   background-color: #1a96e9;
   border-bottom: 1px solid #ccc;
 }
-
+.loh{
+  text-decoration: none;
+}
 .nav-left {
   display: flex;
   align-items: center;

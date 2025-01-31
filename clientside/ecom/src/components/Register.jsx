@@ -19,6 +19,31 @@ const Register = () => {
 
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [pwdCriteria, setPwdCriteria] = useState({
+    length: false,
+    uppercase: false,
+    lowercase: false,
+    number: false,
+    specialChar: false,
+  });
+
+  const validatePassword = (password) => {
+    setPwdCriteria({
+      length: password.length >= 8,
+      uppercase: /[A-Z]/.test(password),
+      lowercase: /[a-z]/.test(password),
+      number: /\d/.test(password),
+      specialChar: /[@$!%*?&]/.test(password),
+    });
+
+    return (
+      password.length >= 8 &&
+      /[A-Z]/.test(password) &&
+      /[a-z]/.test(password) &&
+      /\d/.test(password) &&
+      /[@$!%*?&]/.test(password)
+    );
+  };
 
   const handleChange = (e) => {
     setFormData({...formData,[e.target.name]: e.target.value,});
@@ -33,10 +58,18 @@ const Register = () => {
       return;
     }
 
-    if (formData.pwd !== formData.cpwd) {
-      setError('Passwords do not match');
+    if (!validatePassword(formData.pwd)) {
+      setError(
+        "Password must be at least 8 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character."
+      );
       return;
     }
+
+    if (formData.pwd !== formData.cpwd) {
+      setError("Passwords do not match.");
+      return;
+    }
+
 
     try {
       const response = await axios.post('http://localhost:3000/api/adduser', formData);
@@ -114,6 +147,15 @@ const Register = () => {
                 required
               />
             </div>
+
+            {/* <ul className="password-criteria">
+          <li className={pwdCriteria.length ? "valid" : "invalid"}>🔹 At least 8 characters</li>
+          <li className={pwdCriteria.uppercase ? "valid" : "invalid"}>🔹 At least one uppercase letter</li>
+          <li className={pwdCriteria.lowercase ? "valid" : "invalid"}>🔹 At least one lowercase letter</li>
+          <li className={pwdCriteria.number ? "valid" : "invalid"}>🔹 At least one number</li>
+          <li className={pwdCriteria.specialChar ? "valid" : "invalid"}>🔹 At least one special character (@$!%*?&)</li>
+        </ul> */}
+
 
             <div className="forms-group">
               <input

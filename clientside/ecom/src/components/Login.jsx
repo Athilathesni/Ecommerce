@@ -94,12 +94,12 @@ const Login = () => {
         </form>
 
         <div className="form-footer">
-           <Link to={"/verifyEmail"} className="forgot-password-link">
+           <Link to={"/verify"} className="forgot-password-link">
              Forgot Password?
            </Link>
          </div>
          <div className="und">
-           <Link to={"/register"} className="signup-link">
+           <Link to={"/verify"} className="signup-link">
              <span className="sp">Don't have an account?</span>
              Sign Up
            </Link>

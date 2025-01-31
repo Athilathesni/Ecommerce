@@ -29,8 +29,9 @@ const Nav = ({ setName }) => {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
+        <Link className="loh" to={"/"}>
         <a href="/" className="logo">𝐄-𝐂𝐎𝐌𝐌𝐄𝐑𝐂𝐄</a>
-        <p className="b1">ᴮᵉᵃᵘᵗʸ ᵃⁿᵈ ᴳʳᵒᵒᵐⁱⁿᵍ</p>
+        <p className="b1">ᴮᵉᵃᵘᵗʸ ᵃⁿᵈ ᴳʳᵒᵒᵐⁱⁿᵍ</p></Link>
       </div>
 
       <div className="nav-center">
