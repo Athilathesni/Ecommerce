@@ -43,19 +43,6 @@ export async function addUser(req, res) {
 }
 
 
-// export async function login(req, res) { 
-//     const { email, pass } = req.body
-//     if (!(email && pass))
-//       return res.status(500).send({ msg: "fields are empty" })
-//     const user = await userSchema.findOne({ email })
-//     if (!user) return res.status(500).send({ msg: "email donot exist" })
-//     const success = await bcrypt.compare(pass, user.pass)
-//     if (success !== true)
-//       return res.status(500).send({ msg: "email or password not exist" })
-//     const token = await sign({ UserID: user._id }, process.env.JWT_KEY, {expiresIn: "24h",})
-//     res.status(201).send({ token })
-// }
-
 export async function login(req, res) { 
   const { email, pass } = req.body;
 
@@ -90,37 +77,38 @@ export async function login(req, res) {
   });
 }
 
-export async function verifyEmail(req, res) {
-  const { email } = req.body
-  
-  if (!email) {
-    return res.status(500).send({ msg: "fields are empty" })
-  }
-  const user = await userSchema.findOne({ email })
-  if (!user) {
-    return res.status(500).send({ msg: "email not exist" })
-  } else {
-    const info = await transporter.sendMail({
-      from: "Ecommerce@gmail.com",
-      to: email,
-      subject: "verify",
-      text: "VERIFY! your email",
-      html: `
-    <div class=" page" style="width: 500px; height: 300px; display: flex; 
-    align-items: center; justify-content: center; flex-direction: column;
-     background-color: gainsboro;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; ">
-        <h2>Email verification</h2>
-        <p>Click This Button to verify its you</p>
-        <a href="http://localhost:5173/resetPassword"><button style="padding: 5px 15px; border: none; border-radius: 4px; 
-        background-color: white;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        font-size: 18px; color: red; font-style: italic;" >Verify</button></a>
-    </div>`,
-    })
-    console.log("Message sent: %s", info.messageId)
-    res.status(200).send({ msg: "Verificaton email sented" })
-  }
-}
 
+export async function verifyEmail(req, res) {
+  const {email}=req.body
+  // console.log(email);
+  if (!(email))  {
+      return res.status(404).send({msg:"fields are empty"})
+  }
+  const user= await userSchema.findOne({email})        
+  if (!(user)){
+      const info = await transporter.sendMail({
+          from: 'usmanchusman606@gmail.com', // sender address
+          to: email, // list of receivers
+          subject: "email", // Subject line
+          text: "VERIFY! your email", // plain text body
+          html: `
+          <div style="height: 200px; width: 200px; margin-left: 500px; margin-top: 250px;" >
+      <div style="width: 400px; height: 150px; border:none; background-color: rgb(248, 247, 247); border-radius: 3px; box-shadow:0 0 2px 2px rgb(199, 197, 197); ">
+          <h3 style="color: rgb(146, 57, 16); font-weight: bold; font-size: 25px; margin-top: 10px; margin-left: 110px;">Email Validation</h3>
+          <input type="text" name="email" id="email" placeholder="enter email" style="width: 250px; height: 30px; margin-top: 40px; margin-left: 20px;">
+           <a href="http://localhost:5173/register">
+          <button style="height:40px; width: 90px; color: white; background-color: seagreen; border: none; border-radius: 4px; font-weight: bold;">Verify</button>
+          </a>
+      </div>
+  </div>
+  `,
+  })
+  console.log("Message sent: %s", info.messageId)
+  res.status(200).send({ msg: "Verificaton email sented" })
+} else {
+  return res.status(404).send({ msg: "email exist" })
+}
+}
 export async function updatePassword(req,res){
   const {pass,cpass,email}=req.body
   console.log(req.body);
@@ -136,10 +124,6 @@ export async function updatePassword(req,res){
       console.log(error)
   })
 }
-// export async function getUser(req, res) {
-//   const usr = await userSchema.findOne({ _id: req.user.UserID })
-//   res.status(200).send({ name: usr.username})
-// }
 
 
 export async function getUserData(req, res) {
@@ -248,7 +232,6 @@ export async function addCompany(req, res) {
 
 
 export async function editCompany(req, res) {
-  // Validate the request body (optional)
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
