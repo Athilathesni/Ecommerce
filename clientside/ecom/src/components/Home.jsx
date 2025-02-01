@@ -37,14 +37,14 @@ const Home = ({name}) => {
   useEffect(() => {
     const fetchAllOtherProducts = async () => {
       if (!token) {
-        const res = await axios.get("http://localhost:3000/api/getAllProducts");
+        const res = await axios.get("http://localhost:3004/api/getAllProducts");
 
         if (res.status === 200) {
           setProducts(res.data.products);
         }
       } else {
         try {
-          const res = await axios.get("http://localhost:3000/api/getAllOtherProducts", {
+          const res = await axios.get("http://localhost:3004/api/getAllOtherProducts", {
             headers: { Authorization: `Bearer ${token}` },
           });
 

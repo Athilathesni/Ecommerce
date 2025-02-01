@@ -13,7 +13,7 @@ const Details = () => {
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/api/getProduct/${productId}`, {
+        const res = await axios.get(`http://localhost:3004/api/getProduct/${productId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -27,7 +27,7 @@ const Details = () => {
 
     const checkIfFavorite = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/api/checkWishlist/${productId}`, {
+        const res = await axios.get(`http://localhost:3004/api/checkWishlist/${productId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -47,7 +47,7 @@ const Details = () => {
     try {
       const url = isFavorite ? `removeFromWishlist` : `addToWishlist`;
 
-      const res = await axios.post(`http://localhost:3000/api/${url}/${productId}`, {}, { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.post(`http://localhost:3004/api/${url}/${productId}`, {}, { headers: { Authorization: `Bearer ${token}` } });
       
       if (res.status === 200) {
         setIsFavorite(!isFavorite);

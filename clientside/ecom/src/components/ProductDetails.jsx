@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "./pdet.css"
+import "./prod.css";
 
 const ProductDetails = () => {
   const { productId } = useParams();
@@ -12,7 +11,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/api/getProduct/${productId}`, {
+        const res = await axios.get(`http://localhost:3004/api/getProduct/${productId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 

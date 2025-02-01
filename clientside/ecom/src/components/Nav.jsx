@@ -47,7 +47,7 @@ const Nav = ({ setName }) => {
         {acctype && <p className="account-type">Account Type: {acctype}</p>}
     <div className="ic">
         <Link to="/wishlist" className="wishlist-icon">
-          <FaHeart size={20} title="Wishlist" />
+          <FaHeart size={20} title="wishlist" />
         </Link>
         <Link to="/cart" className="cart-icon">
           <FaShoppingCart size={20} title="Cart" />

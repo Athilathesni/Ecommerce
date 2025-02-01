@@ -12,7 +12,7 @@ const Verify = () => {
     e.preventDefault()
     try {
       console.log(email)
-      const res=await axios.post("http://localhost:3000/api/verify",{email})
+      const res=await axios.post("http://localhost:3004/api/verifyEmail",{email})
       console.log(res)
       if (res.status==200) {
         alert(res.data.msg)
@@ -40,3 +40,5 @@ const Verify = () => {
 };
 
 export default Verify
+
+
